@@ -91,6 +91,8 @@ import Parser.sym;
 /* Helper definitions */
 letter = [a-zA-Z]
 digit = [0-9]
+first_comilla = [\"]|[\']
+end_comilla = [\"]|[\']
 eol = [\r\n]
 white = {eol}|[ \t]
 LineComment	= "//".*
@@ -147,11 +149,11 @@ comment = {GeneralComment} | {LineComment}
 "]" { return symbol(sym.RBRACKET); }
 
 /* identifiers */
-{letter} ({letter}|{digit}|_)* { return symbol(sym.IDENTIFIER, yytext()); }
+{letter} ({letter}|{digit}|_)*	{ return symbol(sym.IDENTIFIER, yytext()); }
 
 /* string */
-"\"".*"\"" { return symbol(sym.STRING, yytext()); }
-{digit}+ { return symbol(sym.NUMBER, yytext()); }
+{first_comilla}.*{end_comilla}	{ return symbol(sym.STRING, yytext()); }
+{digit}+ 						{ return symbol(sym.NUMBER, yytext()); }
 
 /* whitespace */
 {white}+ { /* ignore whitespace */ }

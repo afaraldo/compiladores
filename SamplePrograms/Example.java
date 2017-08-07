@@ -1,4 +1,4 @@
-class HelloWorld {
+class Example {
 	public static void main( String []args ){
 		{
 			a = b;

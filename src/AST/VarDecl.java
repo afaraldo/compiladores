@@ -1,4 +1,5 @@
 package AST;
+import semantic.SymbolTable;
 import AST.Visitor.Visitor;
 
 public class VarDecl extends ASTNode {
@@ -12,5 +13,10 @@ public class VarDecl extends ASTNode {
 
   public void accept(Visitor v) {
     v.visit(this);
+  }
+
+  public Type typeCheck(SymbolTable symtab) {
+	// TODO Auto-generated method stub
+	return null;
   }
 }

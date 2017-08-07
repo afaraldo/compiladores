@@ -3,6 +3,9 @@ package AST;
 import java.util.List;
 import java.util.ArrayList;
 
+import semantic.Register;
+import semantic.SymbolTable;
+
 public class VarDeclList extends ASTNode {
    private List<VarDecl> list;
 

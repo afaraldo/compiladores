@@ -3,6 +3,8 @@ package AST;
 import java.util.List;
 import java.util.ArrayList;
 
+import semantic.SymbolTable;
+
 public class StatementList extends ASTNode {
    private List<Statement> list;
 

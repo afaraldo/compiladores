@@ -1,4 +1,8 @@
 package AST;
+import org.omg.CosNaming.NamingContextPackage.NotFound;
+
+import semantic.SymbolTable;
+import semantic.UndefinedIdentifier;
 import AST.Visitor.Visitor;
 
 public class Identifier extends ASTNode {

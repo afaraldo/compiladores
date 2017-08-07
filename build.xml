@@ -70,14 +70,26 @@
 
   <target name="test-scanner" depends="compile">
     <java classname="TestScanner" classpath="build/classes;lib/CUP.jar"
-	  fork="true" input="SamplePrograms/Example.java">
+	  fork="true" input="SamplePrograms/HelloWorld.java">
     </java>
   </target>
 
   <target name="test-parser" depends="compile">
     <java classname="TestParser" classpath="build/classes;lib/CUP.jar"
-	  fork="true" input="SamplePrograms/SampleMiniJavaPrograms/TreeVisitor.java">
+	  fork="true" input="SamplePrograms/SampleMiniJavaPrograms/Factorial.java">
     </java>
+  </target>
+	
+  <target name="test-check-system" depends="compile">
+    <java classname="TestCheckSystem" classpath="build/classes;lib/CUP.jar"
+	  fork="true" input="SamplePrograms/SampleMiniJavaPrograms/Factorial.java">
+    </java>
+  </target>
+	
+  <target name="test-code-generation" depends="compile">
+  	<java classname="TestCodeGeneration" classpath="build/classes;lib/CUP.jar"
+  		fork="true" input="SamplePrograms/SampleMiniJavaPrograms/Factorial.java">
+  	</java>
   </target>
 
 </project>
